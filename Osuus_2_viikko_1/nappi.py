@@ -1,4 +1,5 @@
 from time import sleep
+
 import RPi.GPIO as GPIO
 
 pin1 = 11
@@ -22,6 +23,7 @@ def main():
     try:
         while True:
             sleep(0.1)
+            
     except KeyboardInterrupt:
         print("\ninterrupted")
     finally:

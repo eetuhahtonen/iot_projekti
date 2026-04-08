@@ -1,13 +1,14 @@
 import sys
 import json
-import RPi.GPIO as GPIO
 import time
 
-pin = 11
+import RPi.GPIO as GPIO
+
+PIN = 11
 
 def main():
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(pin,GPIO.OUT)
+    GPIO.setup(PIN,GPIO.OUT)
     while True:
         try:
             lkm = int(input("Monta kertaa vilkutetaan?"))
@@ -18,11 +19,13 @@ def main():
             try:
                 for i in range(lkm):
                     print(f"kierros {i + 1}")
-                    GPIO.output(pin,1)
+                    GPIO.output(PIN,1)
                     time.sleep(1)
-                    GPIO.output(pin,0)
+                    GPIO.output(PIN,0)
                     time.sleep(1)
+
                 print("loop ohitettu")
+                
             except KeyboardInterrupt:
                 print("\ninterrupted")
                 break
