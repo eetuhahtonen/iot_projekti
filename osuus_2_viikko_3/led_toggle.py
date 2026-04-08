@@ -31,7 +31,7 @@ def main():
                 data = json.loads(conn.read())
                 print(f"http status code={conn.getcode()}")
 
-            if ohjaus := int(data['field7']) != edellinen:
+            if (ohjaus := int(data['field7'])) != edellinen:
                 toggle(ohjaus)
                 edellinen = ohjaus
 
@@ -41,7 +41,6 @@ def main():
         print()
     finally:
         GPIO.cleanup()
-        conn.close()
         print("connection lost")
 
 
