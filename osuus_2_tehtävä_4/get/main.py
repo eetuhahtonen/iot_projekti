@@ -13,9 +13,6 @@ def main():
 
     try:
         
-        if LAST_ID is None:
-            db_commit(get_all(), conn)
-
         while True:
             if data := get_last():
                 db_commit(data, conn)
