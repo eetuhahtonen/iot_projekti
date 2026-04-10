@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import psutil
 import requests
 
-load_dotenv("../.env")
+load_dotenv()
 
 WRITE = os.getenv("WRITE_API_KEY")
 URL = f'https://api.thingspeak.com/update?api_key={WRITE}&'
@@ -28,8 +28,8 @@ def main():
         if post:
             params = "&".join(f"{field}={stats[key]}" for key, field in FIELDS.items())
             requests.post(f"{URL}{params}")
-        
-        print(f"cpu: {stats['cpu']:>5.2f}% ram: {stats['ram']:>5.2f}%{post}")
+            print(f"cpu: {stats['cpu']:>5.2f}% ram: {stats['ram']:>5.2f}%")
+
         counter += 1
         sleep(2)
 
