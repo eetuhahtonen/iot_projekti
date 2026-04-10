@@ -13,6 +13,10 @@ def main():
 
     try:
         
+        if LAST_ID is None:
+            db_commit(get_all(), conn)
+            print("Added all old entries to database.")
+
         while True:
             if data := get_last():
                 db_commit(data, conn)
