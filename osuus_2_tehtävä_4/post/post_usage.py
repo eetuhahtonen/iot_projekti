@@ -26,8 +26,8 @@ def main():
         }
         
         if post:
-            for key, field in FIELDS.items():
-                requests.post(f"{URL}{field}={stats[key]}")
+            params = "&".join(f"{field}={stats[key]}" for key, field in FIELDS.items())
+            requests.post(f"{URL}{params}")
         
         print(f"cpu: {stats['cpu']:>5.2f}% ram: {stats['ram']:>5.2f}%{post}")
         counter += 1

@@ -5,7 +5,7 @@ import os
 
 from dotenv import load_dotenv  
 
-load_dotenv() 
+load_dotenv("../.env")
 
 READ = os.getenv("READ_API_KEY")
 ID = os.getenv("CHANNEL_ID")      

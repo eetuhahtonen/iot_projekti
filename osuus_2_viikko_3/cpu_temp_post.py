@@ -6,7 +6,7 @@ import random
 
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv("../.env")
 
 WRITE = os.getenv("WRITE_API_KEY")
 URL = f'https://api.thingspeak.com/update?api_key={WRITE}&field1='

@@ -6,7 +6,7 @@ import json
 import RPi.GPIO as GPIO
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv("../.env")
 
 PIN = 11
 READ = os.getenv("READ_API_KEY")
